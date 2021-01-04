@@ -15,7 +15,7 @@ The dataset we will base this analysis on was generated using the pybaseball pac
 
 In this baseline implementation of extreme gradient boosting (XGBoost) (see https://xgboost.readthedocs.io/en/latest/), we use the default hyperparameter values in the gradient boosting model and obtain these respectable (but not spectacular) results:
 
-![](img/test_set_scores.png&s=200)
+![](img/test_scores_2.png)
 
 It is an item for a future notebook to look at hyperparameter tuning strategies, keeping in mind that there is an irreducibly random element in the dataset given that the selection of which pitch to throw is a decision by a human mind and so is not deterministically determined by the game state (at least not by the high-level features we have collected in this dataset, discussions of the nature of free will and determinism not withstanding). 
 
