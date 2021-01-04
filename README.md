@@ -1,5 +1,4 @@
 # xgboost_pitch_prediction
-Using extreme gradient boosting to predict Major League Baseball pitch selection.
 
 Using extreme gradient boosting to predict Major League Baseball pitch selection.
 
@@ -19,6 +18,10 @@ In this baseline implementation of extreme gradient boosting (XGBoost) (see http
 
 It is an item for a future notebook to look at hyperparameter tuning strategies, keeping in mind that there is an irreducibly random element in the dataset given that the selection of which pitch to throw is a decision by a human mind and so is not deterministically determined by the game state (at least not by the high-level features we have collected in this dataset, discussions of the nature of free will and determinism not withstanding). 
 
-Extreme gradient boosting is a black box model, its complex nature making simple interpretations impossible. A quick way to begin interpretting the trained model is to look at the feature importance scores derived from the training of the decision trees in the gradient boosting process.
+Extreme gradient boosting is a black box model, its complex nature making simple interpretations impossible. A quick way to begin interpreting the trained model is to look at the feature importance scores derived from the training of the decision trees in the gradient boosting process.
 
 ![](img/xgboost_feature_importance.png)
+
+It makes intuitive sense that fastball pitch selection is heavily dependent on which batter is at the plate, the inning (which 'at_bat_number' correlates with), the pitch_number (Kershaw likes to start off with a fastball strike to get ahead in the count), the game year (Kershaw is throwing less fastballs recently as his velocity has decreased), etc. A deep dive on interpreting the model will be the subject of a future notebook. 
+
+The model is non-trivially better on the training data versus the testing data. On its face, this is not unexpected, but this can also be a sign that the model is overfitting. I will definitely take a look at hyperparameter tuning to optimize the bias versus variance tradeoff in the model complexity. We will also look at simpler linear models to see if a significantly simpler model performs more optimally on this dataset. Stay tuned!
